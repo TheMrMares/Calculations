@@ -8,13 +8,12 @@ const WrappedPizzaCalculator = styled.div`
 `;
 const StyledPizzaBlock = styled(PizzaBlock)`
     float: left;
+    margin: 10px;
 `;
 const BttnsContainer = styled.div`
     float: left;
     width: 100%;
     padding: 5px 15px;
-`;
-const Bttn = styled.button`
 `;
 export default class PizzaCalculator extends Component {
     constructor(){
@@ -54,7 +53,7 @@ export default class PizzaCalculator extends Component {
         return(
             <WrappedPizzaCalculator className={this.props.className}>
                 <BttnsContainer>
-                    <Bttn onClick={this.addPizza.bind(this)}>Add next pizza</Bttn>
+                    <button onClick={this.addPizza.bind(this)}>Add next pizza</button>
                 </BttnsContainer>
                 {this.state.pizzas.map((item,index) => {
                     return this.renderBlock(item.id)

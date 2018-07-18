@@ -28,6 +28,15 @@ const WrappedApp = styled.div`
   width: 100%;
   background: #eee;
   min-height: 100vh;
+  button {
+    padding: 5px 25px;
+    text-transform: uppercase;
+    font-size: 0.7em;
+  }
+  input {
+    padding: 5px;
+    border-radius: 5px;
+  }
 `;
 const RouterHolder = styled.div`
   float: left;
