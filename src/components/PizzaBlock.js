@@ -8,7 +8,7 @@ const WrappedPizzaBlock = styled.div`
     background: white;
 `;
 const CalcTitle = styled.h1`
-    font-size: 1em;
+    font-size: 0.8em;
     font-weight: normal;
     padding: 0px;
     margin: 5px 0px;
@@ -81,8 +81,8 @@ export default class PizzaBlock extends Component {
                 <input type='number' onChange={this.radiusChange.bind(this)}/>
                 <CalcTitle>Pizza's {this.props.BlockID} price ($)</CalcTitle>
                 <input type='number' onChange={this.priceChange.bind(this)}/>
-                <CalcTitle>Pizza surface (CM)</CalcTitle>
-                <CalcResult>{this.state.surface} cm2</CalcResult>
+                <CalcTitle>Pizza surface (CM<sup>2</sup>)</CalcTitle>
+                <CalcResult>{this.state.surface} CM<sup>2</sup></CalcResult>
                 <CalcTitle>1 CM cost ($)</CalcTitle>
                 <CalcResult>{this.state.finalPrice} $</CalcResult>
                 <CalcTitle>How many CM for 1$</CalcTitle>
