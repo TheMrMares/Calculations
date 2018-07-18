@@ -1,19 +1,42 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import styled, { css } from 'styled-components';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+const cssMainPart = `
+  float: left;
+  width: 100%;
+`;
+
+const StyledHeader = styled(Header)`
+  ${cssMainPart}
+`;
+const StyledFooter = styled(Footer)`
+  ${cssMainPart}
+`;
+const WrappedApp = styled.div`
+  float: left;
+  width: 100%;
+`;
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <WrappedApp>
+        <StyledHeader/>
+        <Router>
+        <div>
+              <Route exact path="/" component={StyledHeader} />
+              <Route path="/footer" component={StyledFooter} />
+        </div>
+        </Router>
+        <StyledFooter/>
+      </WrappedApp>
     );
   }
 }
