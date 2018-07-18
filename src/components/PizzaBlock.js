@@ -43,7 +43,7 @@ export default class PizzaBlock extends Component {
             price = pri;
         }
         let surface = Math.PI * (radius*radius);
-        let finalVal = (price/surface).toFixed(2)
+        let finalVal = (price/surface).toFixed(4)
         if(surface == 0){
             finalVal = 0;
         }
@@ -86,7 +86,7 @@ export default class PizzaBlock extends Component {
                 <CalcTitle>1 CM cost ($)</CalcTitle>
                 <CalcResult>{this.state.finalPrice} $</CalcResult>
                 <CalcTitle>How many CM for 1$</CalcTitle>
-                <CalcResult>{this.state.finalCm} $</CalcResult>
+                <CalcResult>{this.state.finalCm} CM<sup>2</sup></CalcResult>
                 <button onClick={this.passData.bind(this)}>Remove pizza</button>
             </WrappedPizzaBlock>
         );
